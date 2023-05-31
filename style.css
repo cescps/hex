@@ -6,9 +6,28 @@ html {
     font-weight: 500;
 }
 
-.container {
-    padding: 1em;
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 27px;
+}
+
+output {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
 
 .material-color-picker {
     display: flex;
