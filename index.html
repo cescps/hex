@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hex Color</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" type="image/png" href="img/round.png"/>
+  
+</head>
+<body>
+  
+<template is="uce-template">
+
+  <vanilla-colorful>
+    <hex-color-picker
+      oncolor-changed={{notify}}
+    /></hex-color-picker>
+    <output>{{color}}</output>
+  </vanilla-colorful>
+
+  <script type="module">
+    export default {
+      props: {color: ''},
+      setup: comp => ({
+        get color() {
+          return comp.color;
+        },
+        notify({detail: {value}}) {
+          comp.color = value;
+        }
+      })
+    };
+  </script>
+
+  <style scoped>
+    output {
+      display: block;
+      margin-top: 10px;
+      font-size: 1.25rem;
+      text-align: center;
+    }
+  </style>
+
+</template>
+
+    
+    
+</body>
+</html>
